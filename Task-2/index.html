@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Today's tasks</h1>
+      <p class="app__summary" id="summary" aria-live="polite"></p>
+    </header>
+
+    <form class="add" id="add-form" autocomplete="off">
+      <label for="task-input" class="visually-hidden">New task</label>
+      <input id="task-input" type="text" placeholder="What needs doing?" maxlength="120" />
+      <button type="submit" id="add-btn">Add task</button>
+    </form>
+    <p class="error" id="error" role="alert" hidden></p>
+
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" data-filter="active" aria-pressed="false">Active</button>
+      <button class="filter" data-filter="completed" aria-pressed="false">Completed</button>
+    </div>
+
+    <ul class="list" id="task-list"></ul>
+    <p class="empty" id="empty" hidden></p>
+
+    <footer class="app__footer">
+      <button class="link" id="clear-completed">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
